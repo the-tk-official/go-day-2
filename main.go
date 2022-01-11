@@ -3,26 +3,15 @@ package main
 import "log"
 
 func main() {
-	log.Println(saySomething("Hello, "))
-	log.Println(saySomething("Goodbye, "))
+	var myString = "Black"
+	log.Println("My string is set to", myString)
 
-	var whatToSay string
-	var saySomethingElse string
-	var i int
-
-	whatToSay, _ = saySomething("Tamerlan!")
-
-	log.Println(whatToSay)
-
-	saySomethingElse, _ = saySomething("King!")
-
-	log.Println(saySomethingElse)
-
-	i = 1
-	i = 10
-	log.Println(i)
+	changeUsingPointer(&myString)
+	log.Println("After func my string is set to", myString)
 }
 
-func saySomething(s string) (string, string) {
-	return s, "World!"
+func changeUsingPointer(s *string) {
+	log.Println("s is set to", s)
+	newValue := "Red"
+	*s = newValue
 }
