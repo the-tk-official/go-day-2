@@ -1,40 +1,32 @@
 package main
 
-import (
-	"log"
-	"sort"
-)
-
-type User struct {
-	FirstName string
-	LastName  string
-}
+import "log"
 
 func main() {
-	myMap := make(map[string]User)
+	var isTrue bool
 
-	myMap["me"] = User{
-		FirstName: "Timur",
-		LastName:  "Kurbanov",
+	isTrue = false
+
+	if !isTrue {
+		log.Println("False")
+	} else {
+		log.Println("True")
 	}
 
-	log.Println(myMap["me"].FirstName)
+	myVar := "cat"
 
-	var mySlice []int
+	switch myVar {
+	case "cat":
+		log.Println("My variable is cat.")
 
-	mySlice = append(mySlice, 2)
-	mySlice = append(mySlice, 1)
-	mySlice = append(mySlice, 3)
+	case "dog":
+		log.Println("My variable is dog.")
 
-	log.Println(mySlice)
+	case "fish":
+		log.Println("My variable is fish.")
 
-	sort.Ints(mySlice)
+	default:
+		log.Println("My variable is None")
 
-	log.Println(mySlice)
-
-	numbers := []int{
-		1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 	}
-
-	log.Println(numbers[5:])
 }
