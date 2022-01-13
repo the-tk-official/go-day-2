@@ -2,31 +2,48 @@ package main
 
 import "log"
 
+type User struct {
+	FirstName string
+	LastName  string
+}
+
 func main() {
-	var isTrue bool
 
-	isTrue = false
+	var users []User
 
-	if !isTrue {
-		log.Println("False")
-	} else {
-		log.Println("True")
+	u1 := User{
+		FirstName: "Timur",
 	}
 
-	myVar := "cat"
+	u2 := User{
+		FirstName: "Dilmurod",
+	}
 
-	switch myVar {
-	case "cat":
-		log.Println("My variable is cat.")
+	users = append(users, u1)
+	users = append(users, u2)
 
-	case "dog":
-		log.Println("My variable is dog.")
+	for i, x := range users {
+		log.Println(i, "-", x.FirstName)
+	}
 
-	case "fish":
-		log.Println("My variable is fish.")
+	for i := 0; i <= 2; i++ {
+		log.Println(i)
+	}
 
-	default:
-		log.Println("My variable is None")
+	mySlice := []string{
+		"dog", "cat", "horse", "fish", "banana",
+	}
 
+	for i, x := range mySlice {
+		log.Println(i, "-", x)
+	}
+
+	myMap := make(map[string]string)
+	myMap["dog"] = "dog"
+	myMap["fish"] = "fish"
+	myMap["hat"] = "hat"
+
+	for x, i := range myMap {
+		log.Println(i, "-", x)
 	}
 }
