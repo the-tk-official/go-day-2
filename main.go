@@ -1,24 +1,40 @@
 package main
 
-import "log"
+import (
+	"log"
+	"sort"
+)
 
 type User struct {
-	// Struct of user
 	FirstName string
-}
-
-func (user *User) printFirstName() {
-	log.Println("My first name is", user.FirstName)
+	LastName  string
 }
 
 func main() {
-	var firstUser User
-	firstUser.FirstName = "Timmy"
+	myMap := make(map[string]User)
 
-	secondUser := User{
-		FirstName: "Tony",
+	myMap["me"] = User{
+		FirstName: "Timur",
+		LastName:  "Kurbanov",
 	}
 
-	firstUser.printFirstName()
-	secondUser.printFirstName()
+	log.Println(myMap["me"].FirstName)
+
+	var mySlice []int
+
+	mySlice = append(mySlice, 2)
+	mySlice = append(mySlice, 1)
+	mySlice = append(mySlice, 3)
+
+	log.Println(mySlice)
+
+	sort.Ints(mySlice)
+
+	log.Println(mySlice)
+
+	numbers := []int{
+		1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+	}
+
+	log.Println(numbers[5:])
 }
